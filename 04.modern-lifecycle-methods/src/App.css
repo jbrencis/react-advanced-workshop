@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.diff {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}

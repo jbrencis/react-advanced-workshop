@@ -1,0 +1,55 @@
+Arguments: 
+  /Users/vicrazumov/.nvm/versions/node/v10.0.0/bin/node /Users/vicrazumov/.npm-packages/bin/yarn
+
+PATH: 
+  /Users/vicrazumov/.nvm/versions/node/v10.0.0/bin:/Users/vicrazumov/anaconda2/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/vicrazumov/.npm-packages/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  10.0.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": ,
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "react": "^16.8.4",
+      "react-dom": "^16.8.4",
+      "react-scripts": "2.1.8"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/vicrazumov/projects/react-advanced-workshop/workshop/05.profiler/package.json: Unexpected token , in JSON at position 12
+      at JSON.parse (<anonymous>)
+      at /Users/vicrazumov/.npm-packages/lib/node_modules/yarn/lib/cli.js:770:59
+      at Generator.next (<anonymous>)
+      at step (/Users/vicrazumov/.npm-packages/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /Users/vicrazumov/.npm-packages/lib/node_modules/yarn/lib/cli.js:103:13

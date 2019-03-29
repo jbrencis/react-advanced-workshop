@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.gpodButton {
+  color: white;
+  background-color: black;
+}
+
+.gpodLightButton {
+  color: black;
+  background-color: white;
+}
+
+.gpodLink {
+  color: black;
+  font-family: monospace;
+}
