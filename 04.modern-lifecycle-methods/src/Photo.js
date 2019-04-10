@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Photo = ({ loadImage }) => {
-  const img = loadImage()
-
+const Photo = ({ img, onLoaded }) => {
   return (
     <div>
-      <img className="photo" src={img}/>
+      <img onLoad={onLoaded} className="photo" src={img}/>
     </div>
   )
 }

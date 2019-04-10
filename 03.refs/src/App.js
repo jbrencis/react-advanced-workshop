@@ -11,10 +11,22 @@ import './App.css';
 import StupidUncontrollablePlayer from './StupidUncontrollablePlayer'
 
 class App extends Component {
+  setAudioControllerRef = node => this.audioController = node;
+
+  handlePlayClick = () => {
+    this.audioController.play()
+  }
+
+  handleStopClick = () => {
+    this.audioController.pause()
+  }
+
   render() {
     return (
       <div className="App">
-        <StupidUncontrollablePlayer/>
+        <button onClick={this.handlePlayClick}>PLAY</button>
+        <button onClick={this.handleStopClick}>STOP</button>
+        <StupidUncontrollablePlayer setRef={this.setAudioControllerRef} />
       </div>
     );
   }

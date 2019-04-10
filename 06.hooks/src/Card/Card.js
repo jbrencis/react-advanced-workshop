@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import './Card.css'
 
-const Card = ({ value, image, hidden, color, tintColor, hideValue }) => {
+const Card = React.memo(({ value, image, hidden, color, tintColor, hideValue }) => {
   return (
     <div className={hidden ? 'cardContainer hidden' : 'cardContainer'}>
       <div className="flipper">
@@ -30,7 +30,7 @@ const Card = ({ value, image, hidden, color, tintColor, hideValue }) => {
       </div>
     </div>
   )
-}
+})
 
 Card.propTypes = {
   value: PropTypes.string.isRequired,

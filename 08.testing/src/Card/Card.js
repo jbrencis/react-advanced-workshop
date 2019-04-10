@@ -4,7 +4,7 @@ import './Card.css'
 
 const Card = ({ value, image, hidden, color, tintColor, hideValue }) => {
   return (
-    <div className={hidden ? 'cardContainer hidden' : 'cardContainer'}>
+    <div data-testid={`card-${value}`} className={hidden ? 'cardContainer hidden' : 'cardContainer'}>
       <div className="flipper">
         <div className="front" style={{'backgroundImage': `url(${image})`}}>
           <div className="tint" style={{ backgroundColor: tintColor }}>

@@ -14,7 +14,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <GetPictureOfTheDayButton/>
+        <GetPictureOfTheDayButton>
+          {
+            (handleClick) => (<button className="gpodButton" onClick={handleClick}>Get picture of the day</button>)
+          }
+        </GetPictureOfTheDayButton>
+
+        <GetPictureOfTheDayButton>
+          {
+            (handleClick) => (<button className="gpodLightButton" onClick={handleClick}>Get picture of the day</button>)
+          }
+        </GetPictureOfTheDayButton>
+
+        <GetPictureOfTheDayButton>
+          {
+            (handleClick) => (<a className="gpodLink" onClick={handleClick} href="#">Get picture of the day</a>)
+          }
+        </GetPictureOfTheDayButton>
       </div>
     );
   }

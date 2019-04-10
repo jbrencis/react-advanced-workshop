@@ -3,10 +3,10 @@
 // make <PublicHolidays/> lazy loaded
 // and check the Network tab again
 
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import './App.css'
 
-import PublicHolidays from './PublicHolidays'
+const PublicHolidays = React.lazy(() => import(/* webpackChunkName: "PublicHolidays" */ './PublicHolidays'))
 
 const MODES = {
   CURRENT_DATE: 'CURRENT_DATE',
@@ -51,7 +51,11 @@ class App extends Component {
   }
 
   get publicHolidaysRender() {
-    return <PublicHolidays/>
+    return (
+      <Suspense fallback={<div>LOADING</div>}>
+        <PublicHolidays/>
+      </Suspense>
+    )
   }
 
   render() {

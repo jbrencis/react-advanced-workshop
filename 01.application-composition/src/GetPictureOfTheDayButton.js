@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
+// render prop implementation
 class GetPictureOfTheDayButton extends Component {
   do() {
     window.open('https://apod.nasa.gov/apod/astropix.html', '_blank');
   }
 
   render() {
-    return <button className="gpodButton" onClick={this.do}>Get picture of the day</button>
+    return this.props.children(this.do)
   }
 }
 

@@ -1,9 +1,8 @@
 import React from 'react';
 
-const StupidUncontrollablePlayer = () => {
-  return (
-    <audio src="/bensound-jazzyfrenchy.mp3" autoPlay={true} />
-  )
+// callback implementation
+const StupidUncontrollablePlayer = ({ setRef }) => {
+  return <audio src="/bensound-jazzyfrenchy.mp3" ref={setRef} />
 }
 
 export default StupidUncontrollablePlayer;

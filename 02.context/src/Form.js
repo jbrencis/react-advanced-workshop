@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
 import getElementStyle, { ThemeContext } from './themes'
+import getTranslation, { LanguageContext } from './languages'
 
 class Form extends Component {
-  static contextType = ThemeContext;
-
   render() {
     return (
-      <div style={getElementStyle('div', this.context.theme)}>
-        <button
-          style={getElementStyle('button', this.context.theme)}
-          onClick={this.context.toggle}
-        >
-          TOGGLE THEME
-        </button>
-      </div>
+      <LanguageContext.Consumer>
+        {language => {
+          console.log(language)
+
+          return (
+            <ThemeContext.Consumer>
+              {theme => (
+                <>
+                <div style={getElementStyle('div', theme.theme)}>
+                  <button
+                    style={getElementStyle('button', theme.theme)}
+                    onClick={theme.toggle}
+                  >
+                    {getTranslation('toggleTheme', language.language)}
+                  </button>
+                </div>
+                <div style={getElementStyle('div', theme.theme)}>
+                  <button
+                    style={getElementStyle('button', theme.theme)}
+                    onClick={language.toggleLanguage}
+                  >
+                    {getTranslation('toggleLanguage', language.language)}
+                  </button>
+                </div>
+                </>
+              )}
+            </ThemeContext.Consumer>
+        )
+      }}
+      </LanguageContext.Consumer>
     )
   }
 }

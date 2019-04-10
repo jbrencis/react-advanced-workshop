@@ -22,6 +22,11 @@ const Pagination = ({ hidden, cards = [], onIndexChange, activeIndex }) => {
 
   }, [activeIndex])
 
+  const getHandleButtonClick = idx => event => {
+    onIndexChange(idx)
+    event.stopPropagation()
+  }
+
   return (
     <div
       className={`pagination ${visible ? '' : 'hidden'}`}
@@ -32,7 +37,7 @@ const Pagination = ({ hidden, cards = [], onIndexChange, activeIndex }) => {
           <button
             key={`btn-${idx}`}
             className={idx === activeIndex ? 'paginationButton active' : 'paginationButton'}
-            onClick={() => onIndexChange(idx)}
+            onClick={getHandleButtonClick(idx)}
           >{card.value}</button>
         ))
       }

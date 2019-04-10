@@ -29,6 +29,7 @@ const CardList = ({ onIndexChange }) => {
       onTouchStart={!hidden ? handleTouchStart : () => {}}
       onTouchEnd={!hidden ? handleTouchEnd : () => {}}
       onTouchMove={!hidden ? handleTouchMove : () => {}}
+      onClick={() => setHidden(prevHidden => !prevHidden)}
     >
       <Pagination
         hidden={hidden}
@@ -38,12 +39,12 @@ const CardList = ({ onIndexChange }) => {
         data={transformX}
       />
       <div
+        data-testid="cardlist"
         className="cardList"
         style={{
           ...listStyle,
           width: `${LIST_WIDTH}px`,
         }}
-        onClick={() => setHidden(prevHidden => !prevHidden)}
       >
         {
           CARDS.map((card, idx) => (

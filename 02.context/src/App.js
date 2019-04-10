@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { THEMES, ThemeContext } from './themes'
+import { LANGUAGES, LanguageContext } from './languages'
 
 import Form from './Form'
 
@@ -14,23 +15,45 @@ class App extends Component {
     super(props);
 
     this.state = {
-      theme: THEMES.DARK,
-      toggle: this.toggleTheme,
+      theme: {
+        theme: THEMES.DARK,
+        toggle: this.toggleTheme,
+      },
+      language: {
+        language: LANGUAGES.EN,
+        toggleLanguage: this.toggleLanguage,
+      }
     }
   }
 
+  toggleLanguage = () => {
+    this.setState(state => ({
+      ...state,
+      language: {
+        ...state.language,
+        language: state.language.language === LANGUAGES.EN ? LANGUAGES.RU : LANGUAGES.EN,
+      }
+    }))
+  }
+
   toggleTheme = () => {
-    this.setState(({ theme }) => ({
-      theme: theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK
+    this.setState(state => ({
+      ...state,
+      theme: {
+        ...state.theme,
+        theme: state.theme.theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK,
+      }
     }))
   }
 
   render() {
     return (
       <div className="App">
-        <ThemeContext.Provider value={this.state}>
-          <Form/>
-        </ThemeContext.Provider>
+        <LanguageContext.Provider value={this.state.language}>
+          <ThemeContext.Provider value={this.state.theme}>
+            <Form/>
+          </ThemeContext.Provider>
+        </LanguageContext.Provider>
       </div>
     );
   }

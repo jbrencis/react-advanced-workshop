@@ -11,8 +11,8 @@ const sleep = ms => {
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min)) + min
 
-const Card = ({ value, image, hidden, color, tintColor, hideValue }) => {
-  sleep(rand(40, 150))
+const Card = React.memo(({ value, image, hidden, color, tintColor, hideValue }) => {
+  // sleep(rand(40, 150))
 
   return (
     <div className={hidden ? 'cardContainer hidden' : 'cardContainer'}>
@@ -41,7 +41,7 @@ const Card = ({ value, image, hidden, color, tintColor, hideValue }) => {
       </div>
     </div>
   )
-}
+})
 
 Card.propTypes = {
   value: PropTypes.string.isRequired,
